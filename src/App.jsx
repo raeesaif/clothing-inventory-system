@@ -12,6 +12,7 @@ import AdminWarehouse from './Admin/AdminWarehouse'
 import AdminProducts from './Admin/AdminProducts'
 import AdminInventory from './Admin/AdminInventory'
 import { MainLayout } from './layout/MainLayout'
+import LandingPage from './pages/LandingPage'
 function App() {
 
 
@@ -20,7 +21,7 @@ function App() {
       <BrowserRouter>
 
         <Routes>
-
+          <Route element={<LandingPage />} path="/" />
           <Route element={<MainLayout />}>
 
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
