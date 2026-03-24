@@ -8,6 +8,7 @@ import { TbReportAnalytics } from "react-icons/tb";
 import RevenueChart from '@/shared/RevenueChart';
 import CategoryChart from '@/shared/CategoryChart';
 import GlobalCard from '@/shared/GlobalCard';
+import SubHeader from '@/shared/SubHeader';
 
 
 const STATE_CARD = [
@@ -39,9 +40,7 @@ const LOW_STOCK_ALERTS = [
 const Dashboard = () => {
     return (
         < >
-
-            <h1 className='text-2xl font-bold' >Dashboard</h1>
-            <p className='text-sm text-gray-500' >Overview of your brand operations</p>
+            <SubHeader title="Dashboard" description="Overview of your brand operations" />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-6 gap-4 mt-4" >
                 {STATE_CARD?.map((item, index) => <StateCard key={index} {...item} />)}
             </div>
