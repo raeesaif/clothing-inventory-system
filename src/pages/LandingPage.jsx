@@ -55,7 +55,7 @@ const LandingPage = () => {
                         <a href="#testimonials" className="text-sm text-muted-foreground transition-colors hover:text-foreground">Testimonials</a>
                     </div>
                     <div className="flex items-center gap-3">
-                        <Link to="/">
+                        <Link to="/admin/dashboard">
                             <Button variant="ghost" size="sm">Log in</Button>
                         </Link>
                         <Link to="/">
