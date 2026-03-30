@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { MdOutlineDashboard } from "react-icons/md";
 import { AiOutlineBranches } from "react-icons/ai";
 import { TfiPackage } from "react-icons/tfi";
@@ -15,7 +16,7 @@ import { LuUsersRound } from "react-icons/lu";
 import { NavLink } from 'react-router-dom';
 import { Sidebar, SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarFooter, SidebarContent } from "@/components/ui/sidebar"
 import { Badge } from "@/components/ui/badge"
-import { LogOut, } from 'lucide-react';
+import { LogOut, Shirt, } from 'lucide-react';
 const SideBarLayout = () => {
 
 
@@ -56,15 +57,17 @@ const SideBarLayout = () => {
     const role = "Admin"
 
     const navigation = roleNavigation[role] || []
-
+    const navigate = useNavigate()
     return (
         <>
             <Sidebar collapsible="icon" style={{ "--sidebar": "#141821" }}>
                 <SidebarHeader>
                     <div className="flex items-center gap-2 px-2 py-2">
-                        <a to="/" className="flex items-center gap-2">
+                        {/* <a to="/" className="flex items-center gap-2">
                             <img src="/logo.png" alt="BusinessInvest" loading="lazy" className="h-8 w-auto" />
-                        </a>
+                        </a> */}
+                        <p className='bg-primary py-2 px-3 rounded-2xl' ><Shirt /></p>
+                        <Badge className="bg-slate-800 text-white font-bold text-lg rounded-md px-2 py-1">Clothify ERP</Badge>
                     </div>
                 </SidebarHeader>
                 <SidebarContent >
@@ -88,9 +91,9 @@ const SideBarLayout = () => {
                 <SidebarFooter>
                     <SidebarMenu>
                         <SidebarMenuItem>
-                            <SidebarMenuButton className="text-slate-300 hover:text-white hover:bg-white/10 cursor-pointer">
+                            <SidebarMenuButton onClick={() => navigate("/")} className="text-slate-300 hover:text-white hover:bg-white/10 cursor-pointer">
                                 <LogOut />
-                                <span>Log out</span>
+                                <span  >Log out</span>
                             </SidebarMenuButton>
                         </SidebarMenuItem>
                     </SidebarMenu>

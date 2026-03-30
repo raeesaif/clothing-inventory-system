@@ -56,10 +56,10 @@ const LandingPage = () => {
                     </div>
                     <div className="flex items-center gap-3">
                         <Link to="/admin/dashboard">
-                            <Button variant="ghost" size="sm">Log in</Button>
+                            <Button className="cursor-pointer" variant="ghost" size="sm">Log in</Button>
                         </Link>
                         <Link to="/">
-                            <Button size="sm" className="gap-1.5 text-white">
+                            <Button size="sm" className="gap-1.5 text-white cursor-pointer">
                                 Start Free Trial <ArrowRight className="h-3.5 w-3.5" />
                             </Button>
                         </Link>
