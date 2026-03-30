@@ -10,13 +10,15 @@ import React, { useState } from 'react'
 import { Search } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { AddProductDialog } from '@/modals/AddProductDialog'
-
-
-
-
-
-
-
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 
 const AdminProducts = () => {
 
@@ -48,6 +50,26 @@ const AdminProducts = () => {
                         placeholder="Search products..."
                         className="pl-9 bg-muted/50 border focus-visible:ring-1 focus-visible:ring-primary/50  "
                     />
+                </div>
+                <div>
+                    <Select>
+                        <SelectTrigger className="w-full max-w-48">
+                            <SelectValue placeholder="All Categories" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectGroup>
+                                <SelectLabel>All Categories</SelectLabel>
+                                <SelectItem value="outerwear"> Outerwear</SelectItem>
+                                <SelectItem value="dresses">Dresses</SelectItem>
+                                <SelectItem value="biazers">Biazers</SelectItem>
+                                <SelectItem value="shirts">Shirts</SelectItem>
+                                <SelectItem value="footerwear">Footerwear</SelectItem>
+                                <SelectItem value="knitwear">Knitwear</SelectItem>
+                                <SelectItem value="denim">Denim</SelectItem>
+                                <SelectItem value="accessories">Accessories</SelectItem>
+                            </SelectGroup>
+                        </SelectContent>
+                    </Select>
                 </div>
             </div>
             <DataTable columns={columns} data={data} />
