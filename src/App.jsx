@@ -13,6 +13,7 @@ import AdminProducts from './Admin/AdminProducts'
 import AdminInventory from './Admin/AdminInventory'
 import { MainLayout } from './layout/MainLayout'
 import LandingPage from './pages/LandingPage'
+import Setting from './pages/Setting'
 function App() {
 
 
@@ -34,6 +35,7 @@ function App() {
             <Route path="/admin/reports" element={<AdminReports />} />
             <Route path="/admin/online-orders" element={<AdminOnlineOrders />} />
             <Route path="/admin/warehouse" element={<AdminWarehouse />} />
+            <Route path="/admin/settings" element={<Setting />} />
 
           </Route>
 
