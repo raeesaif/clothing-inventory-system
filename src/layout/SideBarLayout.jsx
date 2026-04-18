@@ -16,7 +16,7 @@ import { LuUsersRound } from "react-icons/lu";
 import { NavLink } from 'react-router-dom';
 import { Sidebar, SidebarHeader, SidebarMenu, SidebarMenuItem, SidebarMenuButton, SidebarFooter, SidebarContent } from "@/components/ui/sidebar"
 import { Badge } from "@/components/ui/badge"
-import { LogOut, Shirt, } from 'lucide-react';
+import { Bell, BellDotIcon, LogOut, Shirt, } from 'lucide-react';
 const SideBarLayout = () => {
 
 
@@ -38,9 +38,9 @@ const SideBarLayout = () => {
             { icon: <MdOutlineDashboard />, name: "DashBoard", path: "/branch-manager/dashboard" },
             { icon: <TfiPackage />, name: "Products", path: "/branch-manager/products" },
             { icon: <TbPackages />, name: "Inventory", path: "/branch-manager/inventory" },
-            { icon: <TbReportAnalytics />, name: "Restock Orders", path: "/restock-orders" },
-            { icon: <VscGraph />, name: "Reports", path: "/reports" },
-            { icon: <MdOutlineSettings />, name: "Settings", path: "/settings" }
+            { icon: <TbReportAnalytics />, name: "Orders", path: "/branch-manager/orders" },
+            { icon: <VscGraph />, name: "Sales Analytics", path: "/branch-manager/sales" },
+            { icon: <BellDotIcon />, name: "Alerts", path: "/branch-manager/alerts" }
         ]
         ,
         WarehouseManager: [
@@ -50,11 +50,11 @@ const SideBarLayout = () => {
             { icon: <MdOutlineWarehouse />, name: "Warehouse", path: "/branch-manager/warehouse" },
             { icon: <TbReportAnalytics />, name: "Restock Orders", path: "/restock-orders" },
             { icon: <VscGraph />, name: "Reports", path: "/reports" },
-            { icon: <MdOutlineSettings />, name: "Settings", path: "/settings" }
+            { icon: <BellDotIcon />, name: "Settings", path: "/settings" }
         ]
     }
 
-    const role = "Admin"
+    const role = "BranchManager"
 
     const navigation = roleNavigation[role] || []
     const navigate = useNavigate()
@@ -91,7 +91,7 @@ const SideBarLayout = () => {
                 <SidebarFooter>
                     <SidebarMenu>
                         <SidebarMenuItem>
-                            <SidebarMenuButton onClick={() => navigate("/")} className="text-slate-300 hover:text-white hover:bg-white/10 cursor-pointer">
+                            <SidebarMenuButton onClick={() => navigate("/login")} className="text-slate-300 hover:text-white hover:bg-white/10 cursor-pointer">
                                 <LogOut />
                                 <span  >Log out</span>
                             </SidebarMenuButton>
