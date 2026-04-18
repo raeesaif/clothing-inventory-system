@@ -14,6 +14,14 @@ import AdminInventory from './Admin/AdminInventory'
 import { MainLayout } from './layout/MainLayout'
 import LandingPage from './pages/LandingPage'
 import Setting from './pages/Setting'
+import SignUp from './auth/SignUp'
+import Login from './auth/Login'
+import BranchManagerDashboard from './BranchManager/BranchManagerDashboard'
+import ManagerProduct from './BranchManager/ManagerProduct'
+import ManagerInventory from './BranchManager/ManagerInventory'
+import ManagerOrders from './BranchManager/ManagerOrders'
+import ManagerSales from './BranchManager/ManagerSales'
+import ManagerAlerts from './BranchManager/ManagerAlerts'
 function App() {
 
 
@@ -22,7 +30,9 @@ function App() {
       <BrowserRouter>
 
         <Routes>
-          <Route element={<LandingPage />} path="/" />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<LandingPage />} />
           <Route element={<MainLayout />}>
 
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
@@ -36,6 +46,13 @@ function App() {
             <Route path="/admin/online-orders" element={<AdminOnlineOrders />} />
             <Route path="/admin/warehouse" element={<AdminWarehouse />} />
             <Route path="/admin/settings" element={<Setting />} />
+
+            <Route path="/branch-manager/dashboard" element={<BranchManagerDashboard />} />
+            <Route path="/branch-manager/products" element={<ManagerProduct />} />
+            <Route path="/branch-manager/inventory" element={<ManagerInventory />} />
+            <Route path="/branch-manager/orders" element={<ManagerOrders />} />
+            <Route path="/branch-manager/sales" element={<ManagerSales />} />
+            <Route path="/branch-manager/alerts" element={<ManagerAlerts />} />
 
           </Route>
 
