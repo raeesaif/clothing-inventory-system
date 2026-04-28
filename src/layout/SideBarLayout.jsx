@@ -54,7 +54,7 @@ const SideBarLayout = () => {
         ]
     }
 
-    const role = "BranchManager"
+    const role = "Admin"
 
     const navigation = roleNavigation[role] || []
     const navigate = useNavigate()
